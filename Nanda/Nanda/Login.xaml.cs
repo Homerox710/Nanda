@@ -15,6 +15,18 @@ namespace Nanda
         public Login()
         {
             InitializeComponent();
+            btnRegistrar.Clicked += BtnRegistrar_Clicked;
+            btnIr.Clicked += BtnIr_Clicked;
+        }
+
+        private void BtnIr_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new MainPage());
+        }
+
+        private void BtnRegistrar_Clicked(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new Registro());
         }
     }
 }

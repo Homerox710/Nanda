@@ -3,10 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nanda.Registro">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Image Source="fondo.jpg" Aspect="AspectFill"/>
+            <StackLayout>
+                <Label Grid.Row="1" WidthRequest="100"
+                       HeightRequest="100" Margin="0,50,0,30"/>
+                <StackLayout Grid.Row="1" Padding="10,20">
+                    <Label Text="REGISTRO" TextColor="#2d2d86" FontFamily="{StaticResource Roboto}" FontSize="Title" HorizontalTextAlignment="Center"/>
+                    <Entry Placeholder="Usuario: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
+                    <Entry Placeholder="Nombre completo: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
+                    <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
+                    <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" TextColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}"/>
+                    <Entry Placeholder="Telefono: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
+
+                    <Button Text="Registrar Usuario" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
+                        BorderRadius="20" x:Name="btnRegistrar" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -1,8 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              x:Class="Nanda.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <OnPlatform x:Key="Roboto" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Roboto-BoldCondensedItalic.ttf#RobotoCursiva-BoldCondensedItalic"/>
+            </OnPlatform>
+            <OnPlatform x:Key="Code" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Code New Roman.otf#Code New Roman"/>
+            </OnPlatform>
+            <OnPlatform x:Key="Couture" x:TypeArguments="x:String">
+                <On Platform="Android" Value="couture-bld.otf#couture-bld"/>
+            </OnPlatform>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
