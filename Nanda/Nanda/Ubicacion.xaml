@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nanda.Ubicacion">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+                <Image Source="USP.JPG"/>
+                <Label Text="Celulares Nanda San Jose, San Pedro"/>
+                <Entry Text="9,933068229022748" Keyboard="Numeric" IsVisible="false" x:Name="txtLatitud"/>
+                <Entry Text="-84,05400199287156" x:Name="txtLongitud" IsVisible="false" Keyboard="Numeric"/>
+                <Button Text="Mostrar Ubicacion" x:Name="btnAbrir" />
+
+                <Image Source="UH.JPG"/>
+                <Label Text="Celulares Nanda, Heredia"/>
+                <Entry Text="9,999380139460357" Keyboard="Numeric" IsVisible="false" x:Name="txtLatitudH"/>
+                <Entry Text="-84,1211336123216" x:Name="txtLongitudH" IsVisible="false" Keyboard="Numeric"/>
+                <Button Text="Mostrar Ubicacion" x:Name="btnAbrirUH" />
+
+                <Image Source="UCM.JPG"/>
+                <Label Text="Celulares Nanda, Heredia, Paseo de las Flores"/>
+                <Entry Text="9,984016937365663" Keyboard="Numeric" IsVisible="false" x:Name="txtLatitudCM"/>
+                <Entry Text="-84,11072198107804" x:Name="txtLongitudCM" IsVisible="false" Keyboard="Numeric"/>
+                <Button Text="Mostrar Ubicacion" x:Name="btnAbrirCM" />
+
+                <StackLayout x:Name="Caller" Padding="10,0,0,0" Orientation="Horizontal">
+                    <Image Source="PhoneCall" />
+                    <StackLayout Padding="0,0,10,0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Label Text="Llamenos:"/>
+                        <Entry  x:Name="txtNumero" Text="25602020" Placeholder="25602020" IsEnabled="False"/>
+                        <Button x:Name="BtnCall" Text="Llamar" BackgroundColor="#020EA0" TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
