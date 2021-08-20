@@ -43,7 +43,7 @@ namespace Nanda
             {
                 PhoneDialer.Open(txtNumero.Text);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 DisplayAlert("No se puede hacer la llamada", "Intentelo mas tarde", "OK");
             }

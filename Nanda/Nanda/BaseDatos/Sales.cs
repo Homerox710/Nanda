@@ -5,7 +5,7 @@ using SQLite;
 
 namespace Nanda.BaseDatos
 {
-    class Sales
+    public class Sales
     {
         [MaxLength(10), Unique]
         public int Id { get; set; }
