@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace Nanda
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Catalogo : ContentPage
+    public partial class Catalogo : TabbedPage
     {
         public IEnumerable<Products> Products { get; private set; }
         public Catalogo()
