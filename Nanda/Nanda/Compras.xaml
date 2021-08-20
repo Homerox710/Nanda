@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nanda.Compras">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Compras" FontSize="Large" TextColor="White" WidthRequest="100" HorizontalOptions="FillAndExpand"/>
+            <ListView ItemsSource="{Binding Compras} " HasUnevenRows="True"
+            ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout>
+                                <Label Text=""/>
+                                <Label Text="{Binding Ammount}" TextColor="White"/>
+                                <Label Text="{Binding SellDate}" TextColor="White"/>
+                                <Label Text="{Binding Credit}" TextColor="White"/>
+                                <Label Text="{Binding LastPayment}" TextColor="White"/>
+                                <Label Text=""/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nanda.Abonos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Abono" FontSize="Large" TextColor="White" WidthRequest="100" HorizontalOptions="FillAndExpand"/>
+
+            <StackLayout>
+                <Label Text="{Binding Venta.Ammount}" TextColor="White"/>
+                <Label Text="{Binding Venta.SellDate}" TextColor="White"/>
+                <Label Text="{Binding Venta.Credit}" TextColor="White"/>
+                <Label Text="{Binding Venta.LastPayment}" TextColor="White"/>
+            </StackLayout>
+            <Label Text="Digite la cantidad que desea abonar" />
+            <Entry x:Name="txtCantidad" Text="Cantidad"/>
+            <Button x:Name="bntAbonar" Text="Abonar" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
