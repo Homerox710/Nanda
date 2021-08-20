@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Nanda.BaseDatos;
 
 namespace Nanda
 {
@@ -18,15 +19,16 @@ namespace Nanda
             InitializeComponent();
             // Products = Lista de productos
             BindingContext = this;
-        }
+            
+}
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            _ = e.Item as Producto;
+            _ = e.Item as Products;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            _ = e.SelectedItem as Producto;
+            _ = e.SelectedItem as Products;
         }
     }
 }

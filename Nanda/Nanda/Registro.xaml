@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nanda.Registro">
-    <ContentPage.Content>
+    <!--ContentPage.Content>
         <Grid>
             <Image Source="fondo.jpg" Aspect="AspectFill"/>
             <StackLayout>
@@ -10,16 +10,16 @@
                        HeightRequest="100" Margin="0,50,0,30"/>
                 <StackLayout Grid.Row="1" Padding="10,20">
                     <Label Text="REGISTRO" TextColor="#2d2d86" FontFamily="{StaticResource Roboto}" FontSize="Title" HorizontalTextAlignment="Center"/>
-                    <Entry Placeholder="Usuario: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-                    <Entry Placeholder="Nombre completo: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-                    <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-                    <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" TextColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}"/>
-                    <Entry Placeholder="Telefono: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-
+                    <Entry Placeholder="Usuario: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtUsername"/>
+                    <Entry Placeholder="Nombre completo: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtFullName"/>
+                    <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtEmail"/>
+                    <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" TextColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}" x:Name="txtPassword"/>
+                    <Entry Placeholder="Telefono: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtPhone"/>
                     <Button Text="Registrar Usuario" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
                         BorderRadius="20" x:Name="btnRegistrar" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
+                    <Label x:Name="StatusMessage" FontSize="Medium" />
                 </StackLayout>
             </StackLayout>
         </Grid>
-    </ContentPage.Content>
+    </ContentPage.Content-->
 </ContentPage>
