@@ -10,20 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace Nanda
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Catalogo : TabbedPage
+    public partial class Catalogo : ContentPage
     {
-        public IEnumerable<Producto> Celphones { get; private set; }
-        public IEnumerable<Producto> Tablets { get; private set; }
-        public IEnumerable<Producto> Audio { get; private set; }
+        public IEnumerable <Producto> Products { get; private set; }
         public Catalogo()
         {
             InitializeComponent();
-            Data data = new Data();
-            // Los filtramos con consultas Linq
-            Celphones = from product in data.Products where product.Type == "Cel" select product;
-            Tablets = from product in data.Products where product.Type == "Tab" select product;
-            Audio = from product in data.Products where product.Type == "Audio" select product;
-            // Enviamos el contexto
+            // Products = Lista de productos
             BindingContext = this;
         }
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
