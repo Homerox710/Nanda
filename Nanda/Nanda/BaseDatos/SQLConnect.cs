@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using SQLite;
 
@@ -33,7 +34,7 @@ namespace Nanda.BaseDatos
         private SQLConnect(String dbPath) //Crea tablas
         {
             con = new SQLiteConnection(dbPath);
-            con.CreateTable<Users>();
+            con.CreateTable<Users>(); //Crear tablas
         }
         public string EstadoMensaje;
         public int AddNewUser(string username, string full_name, string email, string password, int phone) //Agrega un usuario, engancha la interfaz 
@@ -55,7 +56,7 @@ namespace Nanda.BaseDatos
             { EstadoMensaje = e.Message; } //Convierte en mensaje la cantidad de filas ingresadas
             return result;
         }
-        /*public IEnumerable<Users> GetAllUsers()
+        public IEnumerable<Users> GetAllUsers()
         {
             try
             {
@@ -66,7 +67,7 @@ namespace Nanda.BaseDatos
                 EstadoMensaje = e.Message;
             }
             return Enumerable.Empty<Users>(); //Devuelve del enumarble el empty user
-        }*/
+        }
     }
 }
 
