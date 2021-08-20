@@ -14,8 +14,8 @@
                 
                 <StackLayout Grid.Row="1" Padding="10,20">
                     <Label Text="INICIAR SESIÓN" FontFamily="{StaticResource Roboto}" FontSize="Title" HorizontalTextAlignment="Center" TextColor="#2d2d86"/>
-                    <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-                    <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}" TextColor="#ffffff"/>
+                    <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtEmail"/>
+                    <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}" TextColor="#ffffff" x:Name="txtPassword"/>
 
                     <Button Text="Iniciar Sesión" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
                         BorderRadius="20" x:Name="btnIr" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>

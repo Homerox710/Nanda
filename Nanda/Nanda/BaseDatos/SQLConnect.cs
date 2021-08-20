@@ -68,6 +68,19 @@ namespace Nanda.BaseDatos
             }
             return Enumerable.Empty<Users>(); //Devuelve del enumarble el empty user
         }
+
+        public IEnumerable<Users> Login()
+        {
+            try
+            {
+                return con.Table<Users>(); //Devuelve contenido de la tabla
+            }
+            catch (Exception e)
+            {
+                EstadoMensaje = e.Message;
+            }
+            return Enumerable.Empty<Users>(); //Devuelve del enumarble el empty user
+        }
     }
 }
 
