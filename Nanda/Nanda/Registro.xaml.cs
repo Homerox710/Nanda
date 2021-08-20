@@ -1,24 +1,4 @@
-<<<<<<< Updated upstream
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace Nanda
-{
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Registro : ContentPage
-    {
-        public Registro()
-        {
-            InitializeComponent();
-        }
-    }
-=======
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,5 +27,5 @@ namespace Nanda
             StatusMessage.Text = SQLConnect.Instancia.EstadoMensaje;
         }
     }
->>>>>>> Stashed changes
+
 }
