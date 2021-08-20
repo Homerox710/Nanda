@@ -10,14 +10,29 @@
                        HeightRequest="100" Margin="0,50,0,30"/>
                 <StackLayout Grid.Row="1" Padding="10,20">
                     <Label Text="REGISTRO" TextColor="#2d2d86" FontFamily="{StaticResource Roboto}" FontSize="Title" HorizontalTextAlignment="Center"/>
-                    <Entry Placeholder="Usuario: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-                    <Entry Placeholder="Nombre completo: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-                    <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-                    <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" TextColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}"/>
-                    <Entry Placeholder="Telefono: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" />
-
+                    <Entry Placeholder="Usuario: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtUsername"/>
+                    <Entry Placeholder="Nombre completo: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtFullName"/>
+                    <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtEmail"/>
+                    <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" TextColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}" x:Name="txtPassword"/>
+                    <Entry Placeholder="Telefono: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtPhone"/>
                     <Button Text="Registrar Usuario" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
                         BorderRadius="20" x:Name="btnRegistrar" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
+                    <Button Text="Ver Usuario" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
+                        BorderRadius="20" x:Name="btnVer" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
+                    <Label x:Name="StatusMessage" FontSize="Medium" />
+                    <ListView x:Name="userList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Label Text="{Binding Username}" />
+                                        <Label Grid.Column="1" Text="{Binding Email}" />
+                                        <Label Grid.Column="2" Text="{Binding Password}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackLayout>
             </StackLayout>
         </Grid>

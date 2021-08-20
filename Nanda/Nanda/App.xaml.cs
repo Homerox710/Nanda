@@ -1,16 +1,17 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Nanda.BaseDatos;
 
 namespace Nanda
 {
     public partial class App : Application
     {
         public static MasterDetailPage MasterDet { get; set; }
-        public App()
+        public App(string filename)
         {
             InitializeComponent();
-
+            SQLConnect.Inicializador(filename);
             MainPage = new NavigationPage(new Login());
         }
 
