@@ -6,7 +6,7 @@ using SQLite;
 
 namespace Nanda.BaseDatos
 {
-    public class SQLConnect
+    class SQLConnect
     {
         private SQLiteConnection con;
         private static SQLConnect instancia;

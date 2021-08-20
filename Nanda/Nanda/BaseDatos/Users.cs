@@ -5,7 +5,7 @@ using SQLite;
 
 namespace Nanda.BaseDatos
 {
-    public class Users //Tabla para usuarios
+    class Users //Tabla para usuarios
     {
         [MaxLength(30), Unique]
         public String Username { get; set; }

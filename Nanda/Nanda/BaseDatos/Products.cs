@@ -2,7 +2,7 @@
 
 namespace Nanda.BaseDatos
 {
-    public class Products
+    class Products
     {
         [MaxLength(10), Unique]
         public int Id { get; set; }
