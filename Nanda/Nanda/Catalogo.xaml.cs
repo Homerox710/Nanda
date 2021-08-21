@@ -14,19 +14,23 @@ namespace Nanda
     public partial class Catalogo : ContentPage
     {
         public IEnumerable<Products> Products { get; private set; }
+        public List<Products> Carrito { get; private set; }
+        public Products ProductoSeleccionado { get; set; }
         public Catalogo()
         {
             InitializeComponent();
-            InitializeComponent();
+            btnCarrito.Clicked += BtnCarrito_Clicked;
+
             Products = new List<Products>
             {
+               
                 new Products()
                 {
                     Name = "P40",
                     Brand = "Huawei",
                     Category = "cel",
                     Description = "8GB RAM, 250GB Almacenamiento",
-                    Price = "$500",
+                    Price = 500,
                     Img = "cel.jpg"
                 },
                 new Products()
@@ -35,7 +39,7 @@ namespace Nanda
                     Brand = "Samsung",
                     Category = "tab",
                     Description = "8GB RAM, 250GB Almacenamiento",
-                    Price = "$800",
+                    Price = 800,
                     Img = "tablet.jpg"
                 },
                 new Products()
@@ -44,7 +48,7 @@ namespace Nanda
                     Brand = "Marley",
                     Category = "aud",
                     Description = "Contra agua",
-                    Price = "$700",
+                    Price = 700,
                     Img = "speaker.jpg"
                 },
                 new Products()
@@ -53,7 +57,7 @@ namespace Nanda
                     Brand = "OnePlus",
                     Category = "cel",
                     Description = "8 RAM, 218 GB",
-                    Price = "$350",
+                    Price = 350,
                     Img = "oneplus.png"
                 },
                 new Products()
@@ -62,7 +66,7 @@ namespace Nanda
                     Brand = "Samsung",
                     Category = "cel",
                     Description = "5G, 8 RAM, 256 GB",
-                    Price = "$1800",
+                    Price = 1800,
                     Img = "fold.jpg"
                 },
                 new Products()
@@ -71,7 +75,7 @@ namespace Nanda
                     Brand = "Apple",
                     Category = "cel",
                     Description = "6 RAM, 64GB",
-                    Price = "$700",
+                    Price = 700,
                     Img = "iphone.jpg"
                 },
                 new Products()
@@ -80,7 +84,7 @@ namespace Nanda
                     Brand = "Lenovo",
                     Category = "tab",
                     Description = "6 RAM, 128 GB, Snapdragon 730G Octa-core",
-                    Price = "$550",
+                    Price = 550,
                     Img = "tabp11.jpg"
                 },
                 new Products()
@@ -89,7 +93,7 @@ namespace Nanda
                     Brand = "Samsung",
                     Category = "tab",
                     Description = "6 RAM, 64 GB",
-                    Price = "$420",
+                    Price = 420,
                     Img = "tabs6.jpg"
                 },
                 new Products()
@@ -98,7 +102,7 @@ namespace Nanda
                     Brand = "Apple",
                     Category = "cel",
                     Description = "8 RAM, 256 GB",
-                    Price = "$900",
+                    Price = 900,
                     Img = "ipad.jpg"
                 },
                 new Products()
@@ -107,7 +111,7 @@ namespace Nanda
                     Brand = "Apple",
                     Category = "aud",
                     Description = "Wireless, Sonido envolvente",
-                    Price = "$230",
+                    Price = 230,
                     Img = "airpods.jpg"
                 },
                 new Products()
@@ -116,7 +120,7 @@ namespace Nanda
                     Brand = "Samsung",
                     Category = "cel",
                     Description = "6 RAM, 64 GB",
-                    Price = "$420",
+                    Price = 420,
                     Img = "tabs6.jpg"
                 },
                 new Products()
@@ -125,21 +129,63 @@ namespace Nanda
                     Brand = "JBL",
                     Category = "aud",
                     Description = "Altavoz bluetooth, resistente al agua",
-                    Price = "$150",
+                    Price = 150,
                     Img = "charge.jpg"
                 }
+               
             };
+            
             //Products = SQLConnect.Instancia.GetAllProducts();
             BindingContext = this;
+            
         }
+
+        private async void BtnCarrito_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new Carrito(Carrito));
+        }
+
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             _ = e.Item as Products;
+            
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            _ = e.SelectedItem as Products;
+            Products Item = e.SelectedItem as Products;
+            ProductoSeleccionado =
+            new Products()
+            {
+                Name = Item.Name,
+                Brand = Item.Brand,
+                Category = Item.Category,
+                Description = Item.Description,
+                Price = Item.Price,
+                Img = Item.Img
+            };
+        }
+        public async Task AvisoAsync() 
+        {
+            await DisplayAlert("Control Alert", ProductoSeleccionado.Name, "OK");
+        }
+
+        private void Action(object sender, EventArgs e) //Agrega al Carrito
+        {
+            /*Products producto = new Products();
+            producto = ProductoSeleccionado;
+            Carrito.Add(producto);*/
+            AgregarProducto();
+        }
+        public async Task AgregarProducto()
+        {
+            await Agregar();
+            AvisoAsync();
+        }
+        private async Task Agregar() 
+        {
+            Carrito.Add(ProductoSeleccionado);
         }
     }
 }
