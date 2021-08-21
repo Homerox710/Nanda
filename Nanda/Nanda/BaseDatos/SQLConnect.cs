@@ -35,6 +35,10 @@ namespace Nanda.BaseDatos
         {
             con = new SQLiteConnection(dbPath);
             con.CreateTable<Users>(); //Crear tablas
+            con.CreateTable<Sales>();
+            con.CreateTable<Products>();
+            con.CreateTable<SalesDetails>();
+
         }
         public string EstadoMensaje;
         public int AddNewUser(string username, string full_name, string email, string password, int phone) //Agrega un usuario, engancha la interfaz 
