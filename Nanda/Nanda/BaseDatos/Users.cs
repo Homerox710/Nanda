@@ -19,5 +19,7 @@ namespace Nanda.BaseDatos
         public String TarjetaBanco { get; set; }
         [MaxLength(3)]
         public int CodigoSeguridad { get; set; }
+        [MaxLength(5)]
+        public int Saldo { get; set; }
     }
 }

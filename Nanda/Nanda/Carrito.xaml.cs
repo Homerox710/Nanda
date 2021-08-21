@@ -25,9 +25,21 @@ namespace Nanda
         {
             InitializeComponent();
             Products = Carrito;
-            int total = (from product in Products select product).Count();
+            int total = 0;
+            foreach (var item in Products)
+            {
+                total = total + item.Price;
+            }
+            lblTotal.Text += total.ToString();
             BindingContext = this;
+            btnPagar.Clicked += BtnPagar_Clicked;
         }
+
+        private void BtnPagar_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             _ = e.Item as Products;

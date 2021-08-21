@@ -20,7 +20,7 @@ namespace Nanda
         {
             InitializeComponent();
             btnCarrito.Clicked += BtnCarrito_Clicked;
-
+            Carrito = new List<Products>();
             Products = new List<Products>
             {
                
@@ -172,18 +172,6 @@ namespace Nanda
         }
 
         private void Action(object sender, EventArgs e) //Agrega al Carrito
-        {
-            /*Products producto = new Products();
-            producto = ProductoSeleccionado;
-            Carrito.Add(producto);*/
-            AgregarProducto();
-        }
-        public async Task AgregarProducto()
-        {
-            await Agregar();
-            AvisoAsync();
-        }
-        private async Task Agregar() 
         {
             Carrito.Add(ProductoSeleccionado);
         }
