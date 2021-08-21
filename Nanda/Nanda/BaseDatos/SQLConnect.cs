@@ -87,6 +87,19 @@ namespace Nanda.BaseDatos
             }
             return Enumerable.Empty<Users>(); //Devuelve del enumarble el empty user
         }
+
+        public IEnumerable<Products> GetAllProducts()
+        {
+            try
+            {
+                return con.Table<Products>(); //Devuelve contenido de la tabla
+            }
+            catch (Exception e)
+            {
+                EstadoMensaje = e.Message;
+            }
+            return Enumerable.Empty<Products>(); //Devuelve del enumarble el empty user
+        }
         public IEnumerable<Sales> GetAllSales()
         {
             try

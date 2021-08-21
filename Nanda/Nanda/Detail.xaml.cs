@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nanda.Data;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace Nanda
 
         private void BtncCaterpillar_Clicked(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new Catalogo());
+            ((NavigationPage)this.Parent).PushAsync(new AgregarProducto());
         }
 
 

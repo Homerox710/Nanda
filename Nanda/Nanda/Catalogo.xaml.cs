@@ -18,7 +18,7 @@ namespace Nanda
         {
             InitializeComponent();
             InitializeComponent();
-            // Products = Lista de productos
+            Products = SQLConnect.Instancia.GetAllProducts();
             BindingContext = this;
         }
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
