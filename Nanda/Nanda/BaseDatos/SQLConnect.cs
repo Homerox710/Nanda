@@ -56,6 +56,25 @@ namespace Nanda.BaseDatos
             { EstadoMensaje = e.Message; } //Convierte en mensaje la cantidad de filas ingresadas
             return result;
         }
+        public int AddNewProduct(string name, string brand, string description, int price,  string categorie) //Agrega un usuario, engancha la interfaz 
+        {
+            int result = 0;
+            try
+            {
+                result = con.Insert(new Products
+                {
+                    Name = name,
+                    Brand= brand,
+                    Description = description,
+                    Price = price,
+                    Category = categorie
+                });
+                EstadoMensaje = string.Format("Se agrego el producto correctamente :)", result);
+            }
+            catch (Exception e)
+            { EstadoMensaje = e.Message; } //Convierte en mensaje la cantidad de filas ingresadas
+            return result;
+        }
         public IEnumerable<Users> GetAllUsers()
         {
             try
@@ -67,6 +86,30 @@ namespace Nanda.BaseDatos
                 EstadoMensaje = e.Message;
             }
             return Enumerable.Empty<Users>(); //Devuelve del enumarble el empty user
+        }
+        public IEnumerable<Sales> GetAllSales()
+        {
+            try
+            {
+                return con.Table<Sales>(); //Devuelve contenido de la tabla
+            }
+            catch (Exception e)
+            {
+                EstadoMensaje = e.Message;
+            }
+            return Enumerable.Empty<Sales>(); //Devuelve del enumarble el empty user
+        }
+        public IEnumerable<SalesDetails> GetSalesDetail(int id)
+        {
+            try
+            {
+                return con.Table<SalesDetails>(); //Devuelve contenido de la tabla
+            }
+            catch (Exception e)
+            {
+                EstadoMensaje = e.Message;
+            }
+            return Enumerable.Empty<SalesDetails>(); //Devuelve del enumarble el empty user
         }
 
         public IEnumerable<Users> Login()

@@ -4,9 +4,17 @@
              x:Class="Nanda.Data.AgregarProducto">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="name" Text="Nombre"/>
+            <Entry x:Name="brand" Text="Marca"/>
+            <Entry x:Name="description" Text="Descripcion"/>
+            <Entry x:Name="price" Text="Precio"/>
+            <Entry x:Name="categorie" Text="Categoria"/>
+            <Entry x:Name="image" Text="Categoria"/>
+
+            <Button x:Name="btn" Text="Insertar"/>
+
+            <Label x:Name="mensaje" Text=""/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

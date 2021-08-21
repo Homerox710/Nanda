@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nanda.BaseDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,19 @@ namespace Nanda.Data
         public AgregarProducto()
         {
             InitializeComponent();
+            btn.Clicked += Btn_Clicked;
+        }
+
+        private void Btn_Clicked(object sender, EventArgs e)
+        {
+            string nombre = name.Text;
+            string marca = brand.Text;
+            string descrip = description.Text;
+            int precio = int.Parse(price.Text);
+            string imagen = image.Text;
+
+            SQLConnect.Instancia.AddNewProduct(nombre, marca, descrip, precio, imagen);
+            mensaje.Text = "Insertado";
         }
     }
 }
