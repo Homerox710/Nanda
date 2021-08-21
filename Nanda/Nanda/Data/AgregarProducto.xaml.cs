@@ -25,9 +25,10 @@ namespace Nanda.Data
             string marca = brand.Text;
             string descrip = description.Text;
             int precio = int.Parse(price.Text);
+            string cate = categorie.Text;
             string imagen = image.Text;
 
-            SQLConnect.Instancia.AddNewProduct(nombre, marca, descrip, precio, imagen);
+            SQLConnect.Instancia.AddNewProduct(nombre, marca, descrip, precio, cate, imagen);
             mensaje.Text = "Insertado";
         }
     }

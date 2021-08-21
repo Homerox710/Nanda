@@ -16,5 +16,8 @@ namespace Nanda.BaseDatos
         public int Price { get; set; }
         [MaxLength(10), Unique]
         public string Category { get; set; }
+       
+        [MaxLength(30),Unique]
+        public string Img { get; set; }
     }
 }
