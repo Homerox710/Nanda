@@ -19,7 +19,7 @@
         
                     <Button Text="Iniciar Sesión" BackgroundColor="#28104E"  TextColor="White"  FontAttributes="Bold"
                         BorderRadius="20" x:Name="btnIr" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
-                    <Label x:Name="StatusMessage" FontSize="Medium" />
+                    <Label x:Name="StatusMessage" FontSize="Medium" TextColor="White"/>
                     <StackLayout Orientation="Horizontal" Margin="0,0,0,15">
                         <Grid HorizontalOptions="CenterAndExpand">
                             <Label  Grid.Row="0" Text="¿No tiene cuenta? Haga Click en el siguiente boton!" FontFamily="{StaticResource Roboto}" 

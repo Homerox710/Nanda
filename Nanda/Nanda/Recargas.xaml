@@ -15,7 +15,7 @@
                         <Button Text="Recargar" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
                         BorderRadius="20" x:Name="btnRecargar" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
                         <Entry x:Name="entryRecarga"/>
-                        <Label x:Name="StatusMessage" FontSize="Medium" />
+                        <Label x:Name="StatusMessage" FontSize="Medium" TextColor="White"/>
                     </StackLayout>
                 </StackLayout>
             </ScrollView>

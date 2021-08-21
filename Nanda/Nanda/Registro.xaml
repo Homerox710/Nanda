@@ -23,7 +23,7 @@
                         BorderRadius="20" x:Name="btnRegistrar" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
                     <!--Button Text="Ver Usuario" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
                         BorderRadius="20" x:Name="btnVer" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/-->
-                    <Label x:Name="StatusMessage" FontSize="Medium" />
+                    <Label x:Name="StatusMessage" FontSize="Medium" TextColor="White"/>
                     <!--ListView x:Name="userList">
                         <ListView.ItemTemplate>
                             <DataTemplate>
