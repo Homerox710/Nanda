@@ -61,7 +61,7 @@ namespace Nanda.BaseDatos
             { EstadoMensaje = e.Message; } //Convierte en mensaje la cantidad de filas ingresadas
             return result;
         }
-        public int AddNewProduct(string name, string brand, string description, int price,  string categorie, string img) //Agrega un usuario, engancha la interfaz 
+        public int AddNewProduct(string name, string brand, string description, int price,  string categorie, string img) //Agrega un producto, engancha la interfaz 
         {
             int result = 0;
             try
@@ -82,7 +82,7 @@ namespace Nanda.BaseDatos
             return result;
         }
 
-        public void UpdateUser(Users user) //Agrega un usuario, engancha la interfaz 
+        public void UpdateUser(Users user) //Actualiza el usuario, en este caso para el Saldo
         {
             int result = 0;
             try
@@ -142,19 +142,6 @@ namespace Nanda.BaseDatos
                 EstadoMensaje = e.Message;
             }
             return Enumerable.Empty<SalesDetails>(); //Devuelve del enumarble el empty user
-        }
-
-        public IEnumerable<Users> Login()
-        {
-            try
-            {
-                return con.Table<Users>(); //Devuelve contenido de la tabla
-            }
-            catch (Exception e)
-            {
-                EstadoMensaje = e.Message;
-            }
-            return Enumerable.Empty<Users>(); //Devuelve del enumarble el empty user
         }
     }
 }

@@ -22,11 +22,11 @@ namespace Nanda
 
         private void BtnRecargar_Clicked(object sender, EventArgs e)
         {
-            var Usuario = Login.user; 
-            string Id = Usuario.Username;
-            int Recarga = Int32.Parse(entryRecarga.Text);
-            Usuario.Saldo += Recarga;
-            SQLConnect.Instancia.UpdateUser(user);
+            var Usuario = Login.user; //Usa el usuario del Login ya registrado
+            string Id = Usuario.Username; //Crea una variable para insertar este dato
+            int Recarga = Int32.Parse(entryRecarga.Text); //Conversion del Entry a Int
+            Usuario.Saldo += Recarga; //Se le suma el saldo del usuario más la recarga escrita
+            SQLConnect.Instancia.UpdateUser(user); //Hace el update en el campo de Saldo
             StatusMessage.Text = SQLConnect.Instancia.EstadoMensaje;
         }
     }

@@ -14,8 +14,8 @@ namespace Nanda
     public partial class Catalogo : ContentPage
     {
         public IEnumerable<Products> Products { get; private set; }
-        public List<Products> Carrito { get; private set; }
-        public Products ProductoSeleccionado { get; set; }
+        public List<Products> Carrito { get; private set; } //Lista para Carrito 
+        public Products ProductoSeleccionado { get; set; } //Producto escogido
         public Catalogo()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace Nanda
             Carrito = new List<Products>();
             Products = new List<Products>
             {
-               
+               //Siguen datos quemados de Productos existentes
                 new Products()
                 {
                     Name = "P40",
@@ -154,7 +154,7 @@ namespace Nanda
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Products Item = e.SelectedItem as Products;
+            Products Item = e.SelectedItem as Products; //Se crea un Item para sobreescribir en Products
             ProductoSeleccionado =
             new Products()
             {
@@ -173,7 +173,7 @@ namespace Nanda
 
         private void Action(object sender, EventArgs e) //Agrega al Carrito
         {
-            Carrito.Add(ProductoSeleccionado);
+            Carrito.Add(ProductoSeleccionado); //Add = List
         }
     }
 }

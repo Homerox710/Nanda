@@ -24,7 +24,7 @@ namespace Nanda
         {
             InitializeComponent();
             Products = Carrito;
-            foreach (var item in Products)
+            foreach (var item in Products) //Por cada producto, se le suma al total
             {
                 total = total + item.Price;
             }
@@ -36,24 +36,23 @@ namespace Nanda
         private async void BtnPagar_Clicked(object sender, EventArgs e)
         {
             var saldo = Login.user.Saldo;
-            if (saldo > total)
+            if (saldo > total) //Asi se asegura que tenga dinero en la tarjeta
             {
-                user.Saldo -= total;
-                //Falta Conectar correo
+                user.Saldo -= total; //Resta el Saldo - Total 
 
-                string EmailOrigen = "nandacr236@gmail.com";
+                string EmailOrigen = "nandacr236@gmail.com"; //Correo de Nanda
                 var Consulta = SQLConnect.Instancia.GetAllUsers();
                 var Usuario = Login.user;
                 var usuario = (from user in Consulta where user.Username == Usuario.Username select user).First();
-                string EmailDestino = usuario.Email;
-                string password = "ULACIT123";
+                string EmailDestino = usuario.Email; //Agarra el correo del usuario ingresado
+                string password = "ULACIT123"; //Contraseña de Nanda
 
                 MailMessage oMailMessage = new MailMessage(EmailOrigen, EmailDestino, "Factura Electronica Nanda", Facturar());
+                //Este es el mensaje que despliega en el correo
        
-
                 oMailMessage.IsBodyHtml = true;
 
-                SmtpClient oSmtpCliente = new SmtpClient("smtp.gmail.com");
+                SmtpClient oSmtpCliente = new SmtpClient("smtp.gmail.com"); //Protocolo para envio simple de correos
                 oSmtpCliente.EnableSsl = true;
                 oSmtpCliente.UseDefaultCredentials = false;
                 oSmtpCliente.Port = 587;
@@ -62,7 +61,9 @@ namespace Nanda
                 oSmtpCliente.Send(oMailMessage);
                 oSmtpCliente.Dispose();
 
-                await App.MasterDet.Detail.Navigation.PushAsync(new MainPage());
+                AvisoAsync(); //Aviso de que se realizo la transferencia
+
+                await App.MasterDet.Detail.Navigation.PushAsync(new MainPage()); //Regresa al MainPage
             }
             else
             {
@@ -80,7 +81,7 @@ namespace Nanda
         {
             _ = e.SelectedItem as Products;
         }
-        public string Facturar()
+        public string Facturar() //Sintaxis que se mostrara dentro del correo
         {
             var factura = "Lista de productos de la compra: \n\n";
             foreach (var producto in Products)
@@ -92,6 +93,10 @@ namespace Nanda
             }
             factura += $"Total: {total}";
             return factura;
+        }
+        public async Task AvisoAsync()
+        {
+            await DisplayAlert("Factura","Se realizo correctamente la transferencia. Revise su correo para mayor detalle :)", "OK");
         }
     }
 }

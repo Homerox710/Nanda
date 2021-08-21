@@ -25,22 +25,22 @@ namespace Nanda
         {
             try
             {
-                var Consulta = SQLConnect.Instancia.GetAllUsers();
-                var usuario = (from user in Consulta where user.Username == txtUsuario.Text select user).First();
-                if (usuario.Password == txtPassword.Text)
+                var Consulta = SQLConnect.Instancia.GetAllUsers(); //Agarra todos los usuarios existentes 
+                var usuario = (from user in Consulta where user.Username == txtUsuario.Text select user).First(); //Consulta si el TXT es igual a algun usuario registrado
+                if (usuario.Password == txtPassword.Text) //Como ya se valido usuario, se valida la contraseña
                 {
-                    user = usuario;
-                    ((NavigationPage)this.Parent).PushAsync(new MainPage());
+                    user = usuario; //Coge el user de la tabla para meterlo dentro de la consulta y asimilar la contraseña
+                    ((NavigationPage)this.Parent).PushAsync(new MainPage()); //Redirecciona al MainPage
                 }
                 else
                 {
-                    StatusMessage.Text = string.Format("Contraseña incorrecta");
+                    StatusMessage.Text = string.Format("Contraseña incorrecta"); //Mensaje Label
                 }
             }
             catch (Exception)
             {
 
-                StatusMessage.Text = string.Format("Usuario no existe");
+                StatusMessage.Text = string.Format("Usuario no existe"); //Mensaje Label
             }
             
         }
