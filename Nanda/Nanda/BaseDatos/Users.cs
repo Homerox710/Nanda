@@ -15,7 +15,9 @@ namespace Nanda.BaseDatos
         public String Email { get; set; }
         [MaxLength(30)]
         public String Password { get; set; }
-        [MaxLength(12)]
-        public int Phone { get; set; }
+        [MaxLength(30)]
+        public String TarjetaBanco { get; set; }
+        [MaxLength(3)]
+        public int CodigoSeguridad { get; set; }
     }
 }

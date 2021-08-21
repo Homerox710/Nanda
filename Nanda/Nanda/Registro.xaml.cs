@@ -30,7 +30,7 @@ namespace Nanda
         private void BtnRegistrar_Clicked(object sender, EventArgs e)
         {
             StatusMessage.Text = string.Empty;
-            SQLConnect.Instancia.AddNewUser(txtUsername.Text, txtFullName.Text, txtEmail.Text, txtPassword.Text, Int32.Parse(txtPhone.Text));
+            SQLConnect.Instancia.AddNewUser(txtUsername.Text, txtFullName.Text, txtEmail.Text, txtPassword.Text, txtTarjetaBanco.Text, Int32.Parse(txtCodigoSeguridad.Text));
             StatusMessage.Text = SQLConnect.Instancia.EstadoMensaje;
         }
     }

@@ -41,7 +41,7 @@ namespace Nanda.BaseDatos
 
         }
         public string EstadoMensaje;
-        public int AddNewUser(string username, string full_name, string email, string password, int phone) //Agrega un usuario, engancha la interfaz 
+        public int AddNewUser(string username, string full_name, string email, string password, string tarjetabanco, int codigo) //Agrega un usuario, engancha la interfaz 
         {
             int result = 0;
             try
@@ -52,7 +52,8 @@ namespace Nanda.BaseDatos
                     Full_Name = full_name,
                     Email = email,
                     Password = password,
-                    Phone = phone
+                    TarjetaBanco = tarjetabanco,
+                    CodigoSeguridad  = codigo
                 });
                 EstadoMensaje = string.Format("Se agrego el usuario correctamente :)", result);
             }
