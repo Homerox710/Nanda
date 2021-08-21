@@ -6,9 +6,9 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Localicenos" x:Name="btnUbicacion" BackgroundColor="Black"/>
-            <Button Text="Acerca de" x:Name="btnAcerca" BackgroundColor="Black"/>
-            
+            <Button Text="Localicenos" x:Name="btnUbicacion" BackgroundColor="Black" TextColor="White"/>
+            <Button Text="Acerca de" x:Name="btnAcerca" BackgroundColor="Black" TextColor="White"/>
+            <Button Text="Abonos" x:Name="btnAbonos" BackgroundColor="Black" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

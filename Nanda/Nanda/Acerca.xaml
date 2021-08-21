@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nanda.Acerca">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Acerca de" TextColor="Red"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Label Text="" Grid.Row="0"/>
+            <Image Source="fondo.jpg" Aspect="AspectFill" />
+            <StackLayout>
+        
+                <Label Text = "Celulares Nanda es una empresa, que fue fundada en el año 1996, y que brinda servicios y soluciones, además de una variedad de productos de última generación como celulares, videojuegos, audífonos, tablets, entre otros. Celulares Nanda ofrece una cartera diversa de productos valiosos equipados con la tecnología que la gente más desea. Sus productos y soluciones resuenan entre los consumidores millennial y Generación Z con un enfoque simple, personal, auténtico y divertido. Nanda ofrece experiencias de usuario personalizadas con dispositivos de alto rendimiento que permite a los consumidores explorar y conocer productos innovadores y de última generación. Entre las principales marcas que distribuye Nanda están: Apple, Samsung, Huawei, Alcatel, Xiaomi, Amazon, Braven, Caterpillar, HP, Google, Nokia, Motorola, Roku, Nintendo, Sony, Xbox  y Logic."
+                       TextColor="White" VerticalOptions="CenterAndExpand" 
+                       Margin="20" FontSize="Body" Grid.Row="1"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

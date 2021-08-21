@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nanda.Recargas">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="fondo.jpg" Aspect="AspectFill"/>
+            <ScrollView>
+                <StackLayout>
+                    <Label Grid.Row="1" WidthRequest="100"
+                       HeightRequest="100" Margin="0,50,0,30"/>
+                    <StackLayout Grid.Row="1" Padding="10,20">
+                        <Label Text="Recargue su tarjeta!" TextColor="#2d2d86" FontFamily="{StaticResource Roboto}" FontSize="Title" HorizontalTextAlignment="Center"/>
+                        <Entry Placeholder="Usuario: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtUsername"/>
+                        <Entry Placeholder="Correo electrónico: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtEmail"/>
+                        <Entry Placeholder="Numero de tarjeta: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtTarjetaBanco"/>
+                        <Entry Placeholder="Codigo de seguridad: " PlaceholderColor="#ffffff" TextColor="#ffffff" FontFamily="{StaticResource Roboto}" x:Name="txtCodigoSeguridad"/>
+                        <DatePicker MinimumDate="01/01/2021" MaximumDate="12/31/2030" />
+                        <Entry Placeholder="Contraseña: " PlaceholderColor="#ffffff" TextColor="#ffffff" IsPassword="True" FontFamily="{StaticResource Roboto}" x:Name="txtPassword"/>
+
+                        <Button Text="Registrar Usuario" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
+                        BorderRadius="20" x:Name="btnRegistrar" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
+                        <Button Text="Ver Usuario" BackgroundColor="#28104E"  TextColor="#FDEPCC"  FontAttributes="Bold"
+                        BorderRadius="20" x:Name="btnVer" FontFamily="{StaticResource Code}" Margin="0,0,0,20"/>
+                        <Label x:Name="StatusMessage" FontSize="Medium" />
+                        <ListView x:Name="userList">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Label Text="{Binding Username}" />
+                                            <Label Grid.Column="1" Text="{Binding Email}" />
+                                            <Label Grid.Column="2" Text="{Binding Password}" />
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

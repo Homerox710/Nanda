@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Nanda.BaseDatos;
 
 namespace Nanda
 {
@@ -20,7 +21,13 @@ namespace Nanda
 
             btnAcerca.Clicked += BtnAcerca_Clicked;
             btnUbicacion.Clicked += BtnUbicacion_Clicked;
+            btnAbonos.Clicked += BtnAbonos_Clicked;
+        }
 
+        private async void BtnAbonos_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new Compras());
         }
 
         private async void BtnUbicacion_Clicked(object sender, EventArgs e)
