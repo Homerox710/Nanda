@@ -22,6 +22,13 @@ namespace Nanda
             btnAcerca.Clicked += BtnAcerca_Clicked;
             btnUbicacion.Clicked += BtnUbicacion_Clicked;
             btnAbonos.Clicked += BtnAbonos_Clicked;
+            btnRecargar.Clicked += BtnRecargar_Clicked;
+        }
+
+        private async void BtnRecargar_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDet.IsPresented = false;
+            await App.MasterDet.Detail.Navigation.PushAsync(new Recargas());
         }
 
         private async void BtnAbonos_Clicked(object sender, EventArgs e)

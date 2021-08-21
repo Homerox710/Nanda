@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using static Nanda.Login;
 
 
 namespace Nanda
@@ -20,12 +20,12 @@ namespace Nanda
 
     public partial class Carrito : ContentPage
     {
+        public int total = 0;
         public List<Products> Products { get; private set; }
         public Carrito(List<Products> Carrito)
         {
             InitializeComponent();
             Products = Carrito;
-            int total = 0;
             foreach (var item in Products)
             {
                 total = total + item.Price;
@@ -37,7 +37,15 @@ namespace Nanda
 
         private void BtnPagar_Clicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var saldo = Login.user.Saldo;
+            if (saldo > total)
+            {
+                user.Saldo -= total;
+            }
+            else
+            {
+                StatusMessage.Text = string.Format("Saldo insuficiente");
+            }
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)

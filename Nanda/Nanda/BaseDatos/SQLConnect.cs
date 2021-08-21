@@ -81,6 +81,19 @@ namespace Nanda.BaseDatos
             { EstadoMensaje = e.Message; } //Convierte en mensaje la cantidad de filas ingresadas
             return result;
         }
+
+        public void UpdateUser(Users user) //Agrega un usuario, engancha la interfaz 
+        {
+            int result = 0;
+            try
+            {
+                result = con.Update(
+                user);
+                EstadoMensaje = string.Format("Se agrego el saldo correctamente :)", result);
+            }
+            catch (Exception e)
+            { EstadoMensaje = e.Message; } //Convierte en mensaje la cantidad de filas ingresadas
+        }
         public IEnumerable<Users> GetAllUsers()
         {
             try

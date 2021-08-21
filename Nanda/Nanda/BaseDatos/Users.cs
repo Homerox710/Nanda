@@ -7,7 +7,7 @@ namespace Nanda.BaseDatos
 {
     public class Users //Tabla para usuarios
     {
-        [MaxLength(30), Unique]
+        [PrimaryKey, MaxLength(30), Unique]
         public String Username { get; set; }
         [MaxLength(50)]
         public String Full_Name { get; set; }

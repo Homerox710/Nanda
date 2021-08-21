@@ -34,6 +34,7 @@
             </ListView>
             <Label x:Name="lblTotal" Text="Total: " FontSize="Large" TextColor="Black"/>
             <Button x:Name="btnPagar" Text="Pagar"/>
+            <Label x:Name="StatusMessage" FontSize="Medium" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

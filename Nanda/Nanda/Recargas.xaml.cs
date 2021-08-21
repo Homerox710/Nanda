@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Nanda.BaseDatos;
+using static Nanda.Login;
 
 namespace Nanda
 {
@@ -15,6 +17,17 @@ namespace Nanda
         public Recargas()
         {
             InitializeComponent();
+            btnRecargar.Clicked += BtnRecargar_Clicked;
+        }
+
+        private void BtnRecargar_Clicked(object sender, EventArgs e)
+        {
+            var Usuario = Login.user; 
+            string Id = Usuario.Username;
+            int Recarga = Int32.Parse(entryRecarga.Text);
+            Usuario.Saldo += Recarga;
+            SQLConnect.Instancia.UpdateUser(user);
+            StatusMessage.Text = SQLConnect.Instancia.EstadoMensaje;
         }
     }
 }
