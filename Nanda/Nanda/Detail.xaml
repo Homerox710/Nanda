@@ -7,9 +7,9 @@
         <ScrollView>
             <StackLayout>
                 <controls:ImageCarousel x:Name="imgSlider" HeightRequest="250"/>
-                <ImageButton Source="ISamsung.png" BackgroundColor="White" x:Name="btncSamsung"/>
-                <ImageButton Source="ICaterpillar.png" BackgroundColor="White" x:Name="btncCaterpillar"/>
-                <ImageButton Source="ITablets" BackgroundColor="White" x:Name="btncTablets"/>
+                <ImageButton Source="celuMain.png" BackgroundColor="White" x:Name="btncSamsung"/>
+                <ImageButton Source="tabletMain.png" BackgroundColor="White" x:Name="btncCaterpillar"/>
+                <ImageButton Source="audioMain.jpg" BackgroundColor="White" x:Name="btncTablets"/>
 
             </StackLayout>
         </ScrollView>

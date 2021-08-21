@@ -24,7 +24,7 @@ namespace Nanda
                 {
                     Name = "P40",
                     Brand = "Huawei",
-                    Category = "Cel",
+                    Category = "cel",
                     Description = "8GB RAM, 250GB Almacenamiento",
                     Price = "$500",
                     Img = "cel.jpg"
@@ -33,7 +33,7 @@ namespace Nanda
                 {
                     Name = "Tab 3",
                     Brand = "Samsung",
-                    Category = "Tab",
+                    Category = "tab",
                     Description = "8GB RAM, 250GB Almacenamiento",
                     Price = "$800",
                     Img = "tablet.jpg"
@@ -42,10 +42,91 @@ namespace Nanda
                 {
                     Name = "Speaker",
                     Brand = "Marley",
-                    Category = "Audio",
+                    Category = "aud",
                     Description = "Contra agua",
                     Price = "$700",
                     Img = "speaker.jpg"
+                },
+                new Products()
+                {
+                    Name = "OnePlus 5T",
+                    Brand = "OnePlus",
+                    Category = "cel",
+                    Description = "8 RAM, 218 GB",
+                    Price = "$350",
+                    Img = "oneplus.png"
+                },
+                new Products()
+                {
+                    Name = "Galaxy Z Fold",
+                    Brand = "Samsung",
+                    Category = "cel",
+                    Description = "5G, 8 RAM, 256 GB",
+                    Price = "$1800",
+                    Img = "fold.jpg"
+                },
+                new Products()
+                {
+                    Name = "Iphone 12",
+                    Brand = "Apple",
+                    Category = "cel",
+                    Description = "6 RAM, 64GB",
+                    Price = "$700",
+                    Img = "iphone.jpg"
+                },
+                new Products()
+                {
+                    Name = "Tab P11 Pro",
+                    Brand = "Lenovo",
+                    Category = "tab",
+                    Description = "6 RAM, 128 GB, Snapdragon 730G Octa-core",
+                    Price = "$550",
+                    Img = "tabp11.jpg"
+                },
+                new Products()
+                {
+                    Name = "Tab S6",
+                    Brand = "Samsung",
+                    Category = "tab",
+                    Description = "6 RAM, 64 GB",
+                    Price = "$420",
+                    Img = "tabs6.jpg"
+                },
+                new Products()
+                {
+                    Name = "iPad Pro",
+                    Brand = "Apple",
+                    Category = "cel",
+                    Description = "8 RAM, 256 GB",
+                    Price = "$900",
+                    Img = "ipad.jpg"
+                },
+                new Products()
+                {
+                    Name = "Airpods",
+                    Brand = "Apple",
+                    Category = "aud",
+                    Description = "Wireless, Sonido envolvente",
+                    Price = "$230",
+                    Img = "tairpods.jpg"
+                },
+                new Products()
+                {
+                    Name = "Tab S6",
+                    Brand = "Samsung",
+                    Category = "cel",
+                    Description = "6 RAM, 64 GB",
+                    Price = "$420",
+                    Img = "tabs6.jpg"
+                },
+                new Products()
+                {
+                    Name = "Charge 4",
+                    Brand = "JBL",
+                    Category = "aud",
+                    Description = "Altavoz bluetooth, resistente al agua",
+                    Price = "$150",
+                    Img = "charge.jpg"
                 }
             };
             //Products = SQLConnect.Instancia.GetAllProducts();
