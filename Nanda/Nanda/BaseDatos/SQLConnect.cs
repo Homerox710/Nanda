@@ -60,7 +60,7 @@ namespace Nanda.BaseDatos
             { EstadoMensaje = e.Message; } //Convierte en mensaje la cantidad de filas ingresadas
             return result;
         }
-        public int AddNewProduct(string name, string brand, string description, int price,  string categorie, string img) //Agrega un usuario, engancha la interfaz 
+        public int AddNewProduct(string name, string brand, string description, string price,  string categorie, string img) //Agrega un usuario, engancha la interfaz 
         {
             int result = 0;
             try

@@ -41,7 +41,7 @@ namespace Nanda
 
         private void BtncCaterpillar_Clicked(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new AgregarProducto());
+            ((NavigationPage)this.Parent).PushAsync(new Catalogo());
         }
 
 

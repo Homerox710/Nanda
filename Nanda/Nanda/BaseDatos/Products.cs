@@ -13,7 +13,7 @@ namespace Nanda.BaseDatos
         [MaxLength(30)]
         public string Description { get; set; }
         [MaxLength(6)]
-        public int Price { get; set; }
+        public string Price { get; set; }
         [MaxLength(10), Unique]
         public string Category { get; set; }
        
