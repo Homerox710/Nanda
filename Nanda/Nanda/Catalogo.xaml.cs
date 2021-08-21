@@ -108,7 +108,7 @@ namespace Nanda
                     Category = "aud",
                     Description = "Wireless, Sonido envolvente",
                     Price = "$230",
-                    Img = "tairpods.jpg"
+                    Img = "airpods.jpg"
                 },
                 new Products()
                 {
